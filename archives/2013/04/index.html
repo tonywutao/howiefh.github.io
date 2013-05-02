@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2013/4 | 净土</title>
+  <meta name="author" content="howiefh">
+  
+  <meta name="description" content="A blog of howiefh.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="净土"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="净土" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <!--howiefh scrolltop begin-->
+  <SCRIPT type=text/javascript src="/js/scrolltop.js"></SCRIPT>
+  <!--howiefh scrolltop end-->
+  <!--howiefh baidusitemap begin-->
+  <meta name="baidu-site-verification" content="C1xNwXGozVWk4XrC" />
+  <!--howiefh baidusitemap end-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40492061-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">净土</a></h1>
+  <h2><a href="/">乐不在外而在心，心以为乐，则是境皆乐；心以为苦，则无境不苦。</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title">2013/4</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-04-29T10:32:33.000Z"><a href="/2013/04/29/reset-forgot-mysql-root-password/">Apr 29 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/04/29/reset-forgot-mysql-root-password/">Ubuntu下重置忘记的MySql root密码</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>有时，我们可能会忘记mysql root密码，这时我们就需要重置它。<br>下面就讲下具体操作:</p>
+<ol>
+<li>停止mysql进程<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>su<span class="operator"><span class="keyword">do</span> /etc/init.d/mysql stop
+</pre></td></tr></table></figure>
+或者
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>su<span class="operator"><span class="keyword">do</span> service mysql stop
+</pre></td></tr></table></figure></li>
+<li>用–skip-grant-tables选项启动mysql进程<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="comment">sudo</span> <span class="comment">/usr/sbin/mysqld</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">skip</span>-<span class="comment">grant</span>-<span class="comment">tables</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">skip</span>-<span class="comment">networking</span> <span class="comment">&
+</pre></td></tr></table></figure></li>
+<li>启动mysql客户端<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">mysql</span> -u root
+</pre></td></tr></table></figure></li>
+<li>刷新MySQL的系统权限相关表，重置密码<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>FLUSH PRIVILEGES;
+USE mysql;
+<span class="operator"><span class="keyword">UPDATE</span> <span class="keyword">user</span> <span class="keyword">SET</span> Password = PASSWORD(<span class="string">'new_password'</span>) <span class="keyword">WHERE</span> Host = <span class="string">'localhost'</span> <span class="keyword">AND</span> <span class="keyword">User</span> = <span class="string">'root'</span>;</span>
+</pre></td></tr></table></figure></li>
+<li>刷新MySQL的系统权限相关表，重启mysql进程<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>FLUSH PRIVILEGES<span class="comment">;</span>
+exit<span class="comment">;</span>
+sudo /etc/init<span class="preprocessor">.d</span>/mysql restart
+</pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>参考：<a href="http://chetansingh.me/2012/07/01/reset-lostforgot-mysql-root-password-ubuntu/">Reset lost/forgot MYSQL root password ubuntu</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/04/29/reset-forgot-mysql-root-password/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-04-29T07:32:38.000Z"><a href="/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/">Apr 29 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/">小米2连接Ubuntu12.04进行调试</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p>打开终端，在未连接小米的情况下运行lsusb，之后连接小米再运行lsusb，比较两次的输出应该会发现多出这样一行：
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">Bus</span> <span class="number">001</span> Device <span class="number">007</span>: ID <span class="number">2717</span>:xxxx
+</pre></td></tr></table></figure>
+其中<code>xxxx</code>应该是因人而异的，这个ID就是咱们的小米了。请记下这个ID，之后会用到。</p>
+</li>
+<li><p>编辑/etc/udev/rules.d/50-android.rules中的规则
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>su<span class="operator"><span class="keyword">do</span> vi  /etc/udev/rules.d/<span class="number">50</span>-android.rules
+</pre></td></tr></table></figure>
+在打开的文件中增加以下文本：
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="setting">SUBSYSTEM=<span class="value">=<span class="string">"usb"</span>, SYSFS{idVendor}==<span class="string">"2717"</span>, MODE==<span class="string">"0666"</span></span></span>
+<span class="setting">SUBSYSTEM=<span class="value">=<span class="string">"usb_device"</span>, SYSFS{idVendor}==<span class="string">"2717"</span>, MODE==<span class="string">"0666"</span></span></span>
+<span class="setting">SUBSYSTEM=<span class="value">=<span class="string">"usb"</span>, ATTR{idVendor}==<span class="string">"2717"</span>, ATTR{idProduct}==<span class="string">"xxxx"</span>, SYMLINK+=<span class="string">"android_adb"</span></span></span>
+</pre></td></tr></table></figure>
+替换<code>ATTR{idProduct}==&quot;xxxx&quot;</code>中的<code>xxxx</code>为你之前显示的结果。<br>50-android.rules 文件名应该是随意的，如99-android.rules ，54-android.rules应该也可以。<br>注意 <code>SUBSYSTEM==&quot;usb&quot;, SYSFS{idVendor}==&quot;2717&quot;, MODE==&quot;0666&quot;</code>这句是给 ubuntu 7.01 以后的系统识别用的。<br>而<code>SUBSYSTEM==&quot;usb_device&quot;, SYSFS{idVendor}==&quot;2717&quot;, MODE==&quot;0666&quot;</code>是给 Ubuntu 7.01之前的系统识别用的。    </p>
+</li>
+<li><p>变更权限</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>su<span class="operator"><span class="keyword">do</span> chmod a+rx /etc/udev/rules.d/<span class="number">50</span>-android.rules
+</pre></td></tr></table></figure>
+</li>
+<li><p>重启udev服务</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>su<span class="operator"><span class="keyword">do</span> service udev restart
+</pre></td></tr></table></figure>
+</li>
+<li><p>杀死adb正在运行的服务，查看连接的设备<br>cd到你的sdk目录下的platform-tools中，执行：
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="comment">sudo</span> <span class="string">.</span><span class="comment">/adb</span> <span class="comment">kill</span>-<span class="comment">server</span>
+<span class="comment">sudo</span> <span class="string">.</span><span class="comment">/adb</span> <span class="comment">devices
+</pre></td></tr></table></figure>
+如果List of devices attached下没有设备。请执行如下操作：
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="title">cd</span> ~/.android/
+<span class="title">vi</span> adb_usb.ini
+</pre></td></tr></table></figure>
+添加如下内容：
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="attribute">0x2717
+</pre></td></tr></table></figure>
+这个 0x2717 就是我们得到的设备号码。<br>保存，退出，之后再切换到platform-tools，执行：
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="comment">sudo</span> <span class="string">.</span><span class="comment">/adb</span> <span class="comment">kill</span>-<span class="comment">server</span>
+<span class="comment">sudo</span> <span class="string">.</span><span class="comment">/adb</span> <span class="comment">devices
+</pre></td></tr></table></figure>
+这时List of devices attached下应该有设备了。之后就可以在eclipse里调试了。</p>
+</li>
+</ul>
+<p>本文参考：<a href="http://www.cnblogs.com/loulijun/archive/2012/12/18/2823272.html">http://www.cnblogs.com/loulijun/archive/2012/12/18/2823272.html</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-04-26T12:09:50.000Z"><a href="/2013/04/26/use-hexo/">Apr 26 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/04/26/use-hexo/">hexo使用笔记</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>折腾Otcopress时发现了hexo，主题很合我胃口，文档也很好，有中文文档，使用起来也很简单，于是就换到<a href="http://zespia.tw/hexo/">Hexo</a>了。简单记录下    </p>
+<h2>开始</h2>
+<p>在安装Hexo之前，必须先<a href="http://zespia.tw/hexo/zh-CN/docs/install.html">安装</a>git和Node.js。</p>
+<p>npm安装Hexo:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">npm</span> install hexo -g
+</pre></td></tr></table></figure>
+
+<p>创建项目：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="title">hexo</span> init project （名称可以随意）
+<span class="title">cd</span> project
+</pre></td></tr></table></figure>
+
+<h2>配置</h2>
+<p>编辑根目录下的_config.yml,需要修改的几个地方。 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="method">title:</span> <span class="class">Hexo</span>
+<span class="method">subtitle:</span>
+<span class="method">description:</span>
+<span class="method">author:</span> <span class="class">John</span> <span class="class">Doe</span>
+<span class="method">email:</span>
+<span class="method">language:</span>
+
+<span class="method">url:</span> <span class="method">http:</span>//yoursite.com
+
+<span class="method">new_post_name:</span> :year-:month-:day-:title.md 
+
+<span class="method">deploy:</span>
+  <span class="method">type:</span> github
+  <span class="method">repository:</span> <span class="method">https:</span>//github.com/username/repo
+  <span class="method">branch:</span> master
+</pre></td></tr></table></figure>
+
+<p>添加图标：</p>
+<p>在<code>themes/light/layout/_partial/head.ejs</code>里将<code>&lt;link href=&quot;&lt;%- config.root %&gt;favicon.png&quot; rel=&quot;icon&quot;&gt;</code>替换为<code>&lt;link href=&quot;&lt;%- config.root %&gt;favicon.ico&quot; rel=&quot;icon&quot; type=&quot;image/x-ico&quot;&gt;</code>。将favicon.ico图标文件放在source目录下。制作图标的网站，<a href="http://www.faviconer.com/">www.faviconer.com</a>。</p>
+<p>添加分享：</p>
+<p>将<code>themes/light/layout/_partial/article.ejs</code>中的<code>&lt;%-partial(&#39;post/share&#39;)%&gt;</code>一行删掉，替换为<a href="http://share.baidu.com/code">百度分享的代码</a>。</p>
+<p>添加评论：</p>
+<p>将<code>themes/light/layout/_patrial/comment.ejs</code>中的<code>config.disqus_shortname &amp;&amp;</code>删掉, <code>&lt;section&gt;</code>内替换为<a href="http://duoshuo.com/">多说</a> 提供的代码。</p>
+<h2>写作</h2>
+<p>创建新文章：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">hexo</span> new <span class="string">"new post"</span>
+</pre></td></tr></table></figure>
+
+<p>生成静态文件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">hexo</span> generate
+</pre></td></tr></table></figure>
+
+<p>启动服务器：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">hexo</span> server
+</pre></td></tr></table></figure>
+
+<p>打开浏览器，输入<a href="http://localhost:4000">http://localhost:4000</a> 预览。</p>
+<p>部署：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="title">hexo</span> deploy
+<span class="title">hexo</span> deploy <span class="comment">--generate</span>
+</pre></td></tr></table></figure>
+
+<p>第二个可以在部署钱自动生成文件。</p>
+<p>移除部署文件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="comment">rm</span> <span class="literal">-</span><span class="comment">rf</span> <span class="string">.</span><span class="comment">deploy
+</pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/04/26/use-hexo/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:howiefh.github.io">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">Categories</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/git/">git</a><small>1</small></li>
+  
+    <li><a href="/categories/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/categories/mysql/">mysql</a><small>1</small></li>
+  
+    <li><a href="/categories/ubuntu/">ubuntu</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/git/" style="font-size: 16.67px;">git</a><a href="/tags/github-pages/" style="font-size: 11.67px;">github pages</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a><a href="/tags/ubuntu/" style="font-size: 18.33px;">ubuntu</a><a href="/tags/小米/" style="font-size: 15.00px;">小米</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2013/05/02/git-note/">git学习笔记</a>
+      </li>
+    
+      <li>
+        <a href="/2013/04/29/reset-forgot-mysql-root-password/">Ubuntu下重置忘记的MySql root密码</a>
+      </li>
+    
+      <li>
+        <a href="/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/">小米2连接Ubuntu12.04进行调试</a>
+      </li>
+    
+      <li>
+        <a href="/2013/04/26/use-hexo/">hexo使用笔记</a>
+      </li>
+    
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2013 howiefh
+  
+</div>
+<div class="clearfix"></div></footer>
+  <!--howiefh scrolltop begin-->
+  <DIV style="DISPLAY: none" id=goTopBtn><IMG border=0 src="/images/top.jpg"></DIV>
+  <SCRIPT type=text/javascript>goTopEx();</SCRIPT>
+  <!--howiefh scrolltop end-->
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2013/5 | 净土</title>
+  <meta name="author" content="howiefh">
+  
+  <meta name="description" content="A blog of howiefh.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="净土"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="净土" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <!--howiefh scrolltop begin-->
+  <SCRIPT type=text/javascript src="/js/scrolltop.js"></SCRIPT>
+  <!--howiefh scrolltop end-->
+  <!--howiefh baidusitemap begin-->
+  <meta name="baidu-site-verification" content="C1xNwXGozVWk4XrC" />
+  <!--howiefh baidusitemap end-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40492061-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">净土</a></h1>
+  <h2><a href="/">乐不在外而在心，心以为乐，则是境皆乐；心以为苦，则无境不苦。</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title">2013/5</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-05-02T10:31:29.000Z"><a href="/2013/05/02/git-note/">May 2 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/05/02/git-note/">git学习笔记</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ol>
+<li><p>git别名</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">global</span> <span class="comment">alias</span>.<span class="comment">ci</span> <span class="comment">"commit"</span>
+<span class="comment">git</span> <span class="comment">config</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">global</span> <span class="comment">alias</span>.<span class="comment">co</span> <span class="comment">"chechout"
+</pre></td></tr></table></figure>
+</li>
+<li><p>忽略文件<br>如果是版本库级别的忽略用<br><code>.gitignore</code><br>如果仅仅是个人的忽略用<br><code>.git/info/exclude</code>  不会将此设置传播出去</p>
+</li>
+<li><p>添加文件到暂存区</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> add
+</pre></td></tr></table></figure>
+交互式模式
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> add -i
+</pre></td></tr></table></figure>
+补丁模式
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> add -p
+</pre></td></tr></table></figure>
+</li>
+<li><p>提交修改
+先暂存，后提交
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">add</span> <span class="comment">files</span>
+<span class="comment">git</span> <span class="comment">commit</span> <span class="literal">-</span><span class="comment">m</span> <span class="comment">"</span>.<span class="string">.</span><span class="comment">"
+</pre></td></tr></table></figure>
+直接提交
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">commit</span> <span class="literal">-</span><span class="comment">m</span> <span class="comment">"</span>.<span class="string">.</span><span class="comment">"</span> <span class="literal">-</span><span class="comment">a
+</pre></td></tr></table></figure>
+或者
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">commit</span> <span class="literal">-</span><span class="comment">m</span> <span class="comment">"</span>.<span class="string">.</span><span class="comment">"</span> <span class="comment">files
+</pre></td></tr></table></figure>
+多个-m可以换行<br>提交留言至少应该体现出进行本次修改的原因<br>增补提交<br>对于提交后发现一些小问题的情况，可以使用--amend。只能针对最后一个提交。<br>编辑contact.html添加一个链接
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">commit</span> <span class="literal">-</span><span class="comment">m</span> <span class="comment">"add</span> <span class="comment">link</span> <span class="comment">to</span> <span class="comment">google"</span> <span class="literal">-</span><span class="comment">a
+</pre></td></tr></table></figure>
+之后修改链接地址
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">commit</span> <span class="literal">-</span><span class="comment">C</span> <span class="comment">HEAD</span> <span class="literal">-</span><span class="comment">a</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">amend
+</pre></td></tr></table></figure>
+-C使复用制定提交（HEAD）的提交留言。-c会打开默认编辑器。增补提交是修正上次提交，git log 会发现只有增补提交的提交名称，而没有上次的。</p>
+</li>
+<li><p>查看工作目录状态</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> status
+</pre></td></tr></table></figure>
+</li>
+<li><p>查看文件改动<br>比较工作目录和暂存区</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> diff
+</pre></td></tr></table></figure>
+比较暂存区和版本库
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">diff</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">cached
+</pre></td></tr></table></figure>
+比较工作目录和版本库
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> diff HEAD
+</pre></td></tr></table></figure>
+</li>
+<li><p>查看提交信息</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> log
+</pre></td></tr></table></figure>
+快速查看历史记录
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">log</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">pretty=oneline
+</pre></td></tr></table></figure>
+记录比较多时，可以使用jk等vi的命令向下向上查看
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre>git <span class="built_in">log</span> -p  <span class="preprocessor"># 添加-p选项可以显示版本间代码差异</span>
+git <span class="built_in">log</span> -<span class="number">1</span>  <span class="preprocessor"># 显示一个</span>
+git <span class="built_in">log</span> -<span class="number">2</span>  <span class="preprocessor"># 查看近两次提交</span>
+git <span class="built_in">log</span> a8b8a42  <span class="preprocessor"># 查看提交名称为a8b8a42及其之前的提交，至少应该有四位</span>
+</pre></td></tr></table></figure>
+按范围查看提交信息
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">log</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">since="5</span> <span class="comment">hours"</span>  <span class="comment">#</span> <span class="comment">查看5小时以内的提交</span>
+<span class="comment">git</span> <span class="comment">log</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">before="5</span> <span class="comment">hours"</span> <span class="comment">#</span> <span class="comment">查看5小时之前的提交
+</pre></td></tr></table></figure>
+可以接受的的时间格式：3 hours, 5 minutes, 1 minute, 2013-4-13, 2013.4.13, 2013-4.13
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>git <span class="keyword">log</span> <span class="number">8</span>d0a22b..a8b8a42    <span class="comment"># 查看提交名称在8d0a22b和a8b8a42之间的提交，不包括起点，只包括终点</span>
+git <span class="keyword">log</span> <span class="number">8</span>d0a22b..HEAD       <span class="comment"># 查看提交名称8d0a22b到当前分支末梢的最新版本，也可以不输HEAD</span>
+git <span class="keyword">log</span> --pretty=<span class="keyword">format</span>:<span class="string">"<span class="variable">%h</span> <span class="variable">%s</span>"</span> <span class="number">1.0</span>..HEAD <span class="comment"># 查看标签1.0到当前分支末梢的最新版本</span>
+</pre></td></tr></table></figure>
+^:一个脱字符作用相遇回溯一个版本 8d0a22b^是指8d0a22b之前的那个版本<br>~n:波浪线加数字是指回溯n个版本。8d0a22b~1是指8d0a22b的父节点<br>以下命令执行结果相同
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">log</span> <span class="literal">-</span><span class="comment">1</span> <span class="comment">HEAD^^^</span>
+<span class="comment">git</span> <span class="comment">log</span> <span class="literal">-</span><span class="comment">1</span> <span class="comment">HEAD^~2</span>
+<span class="comment">git</span> <span class="comment">log</span> <span class="literal">-</span><span class="comment">1</span> <span class="comment">HEAD~1^^</span>
+<span class="comment">git</span> <span class="comment">log</span> <span class="literal">-</span><span class="comment">1</span> <span class="comment">HEAD~3
+</pre></td></tr></table></figure>
+查看版本之间的差异
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">diff</span> <span class="comment">8d0a22b</span>      <span class="comment">#</span> <span class="comment">默认第二个参数不写的话就是HEAD</span>
+<span class="comment">git</span> <span class="comment">diff</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">stat</span> <span class="comment">1</span>.<span class="comment">0</span>   <span class="comment">#</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">stat可以统计改动的代码量，同样第二个参数不写就是HEAD
+</pre></td></tr></table></figure>
+查看代码块的历史信息
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> blame index.html
+</pre></td></tr></table></figure>
+输出：
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>^a8b8a42 (howiefh <span class="number">2013</span>-<span class="number">04</span>-<span class="number">13</span> <span class="number">19</span>:<span class="number">18</span>:<span class="number">35</span> +<span class="number">0800</span>  <span class="number">1</span>) &lt;html&gt;
+<span class="function"><span class="title">e207eaa0</span> <span class="params">(howiefh <span class="number">2013</span>-<span class="number">04</span>-<span class="number">13</span> <span class="number">19</span>:<span class="number">30</span>:<span class="number">12</span> +<span class="number">0800</span>  <span class="number">2</span>)</span>         &<span class="title">lt</span>;<span class="title">head</span>&<span class="title">gt</span>;
+</pre></td></tr></table></figure>
+有脱字符的表示版本库中的第一个提交
+可以限定查看范围
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">blame</span> <span class="literal">-</span><span class="comment">L</span> <span class="comment">12</span>,<span class="comment">13</span> <span class="comment">index</span>.<span class="comment">html</span>
+<span class="comment">git</span> <span class="comment">blame</span> <span class="literal">-</span><span class="comment">L</span> <span class="comment">12</span>,<span class="literal">+</span><span class="comment">2</span> <span class="comment">index</span>.<span class="comment">html</span>
+<span class="comment">git</span> <span class="comment">blame</span> <span class="literal">-</span><span class="comment">L</span> <span class="comment">12</span>,<span class="literal">-</span><span class="comment">2</span> <span class="comment">index</span>.<span class="comment">html</span>
+<span class="comment">git</span> <span class="comment">blame</span> <span class="literal">-</span><span class="comment">L</span> <span class="comment">"/&lt;\/body&gt;/"</span>,<span class="literal">+</span><span class="comment">2</span> <span class="comment">index</span>.<span class="comment">html</span>
+<span class="comment">git</span> <span class="comment">blame</span> <span class="literal">-</span><span class="comment">L</span> <span class="comment">"/&lt;\/body&gt;/"</span>,<span class="literal">-</span><span class="comment">2</span> <span class="comment">8d0a22b^</span> <span class="literal">-</span><span class="literal">-</span> <span class="comment">index</span>.<span class="comment">html
+</pre></td></tr></table></figure>
+跟踪内容
+创建文件original.txt写入三行，并再复制这三行
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="title">git</span> blame original.txt
+<span class="title">git</span> blame -<span class="type">M</span> original.txt
+</pre></td></tr></table></figure>
+后者显示的所有提交名称相同，因为git检测到了重复的内容
+复制文件original.txt并重命名为copy.txt
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">blame</span> <span class="literal">-</span><span class="comment">C</span> <span class="literal">-</span><span class="comment">C</span> <span class="comment">copy</span>.<span class="comment">txt
+</pre></td></tr></table></figure>
+显示出事提交名称和初始文件名original.txt
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">log</span> <span class="literal">-</span><span class="comment">C</span> <span class="literal">-</span><span class="comment">C</span> <span class="literal">-</span><span class="comment">1</span> <span class="literal">-</span><span class="comment">p		#</span> <span class="comment">可以检测到复制信息
+</pre></td></tr></table></figure>
+</li>
+<li><p>反转提交</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">revert</span> <span class="literal">-</span><span class="comment">n</span> <span class="comment">HEAD</span>     <span class="comment">#</span> <span class="literal">-</span><span class="comment">n选项git</span> <span class="comment">会暂存所有变更，而不立即提交，</span>-<span class="literal">-</span><span class="comment">no</span>-<span class="comment">edit不打开编辑器</span>
+<span class="comment">git</span> <span class="comment">revert</span> <span class="literal">-</span><span class="comment">n</span> <span class="comment">49005c1</span> 
+<span class="comment">git</span> <span class="comment">commit</span> 
+</pre></td></tr></table></figure>
+复位
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">reset</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">hard</span> <span class="comment">HEAD^		#</span> <span class="comment">复位到HEAD的父节点</span>
+<span class="comment">git</span> <span class="comment">reset</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">hard</span> <span class="comment">HEAD~3		#</span> <span class="comment">复位到HEAD的曾祖父节点
+</pre></td></tr></table></figure>
+revert vs. reset<br>revert相对安全，是对某一次提交undo，并且保留提交历史。<br>reset相对比较危险，要对某一次提交undo则其后的所有提交都会undo，不保留历史，永久性的。<br>改写历史记录<br>重新排序
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> rebase -i HEAD~<span class="number">3</span>   <span class="comment"># 之后在打开的编辑器中改变顺序</span>
+</pre></td></tr></table></figure>
+将多个提交压合成一个提交
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> rebase -i 0bb3dfb^  <span class="comment"># 将要修改要合并的另一个记录移动到0bb3dfb后，并将其前面的pick改为squash</span>
+</pre></td></tr></table></figure>
+将一个提交分解成多个提交
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">rebase</span> <span class="literal">-</span><span class="comment">i</span> <span class="comment">HEAD~4</span>  <span class="comment">#</span> <span class="comment">在打开的编辑器中将要分解的记录前的pick改为edit，保存退出，git</span> <span class="comment">reset</span> <span class="comment">HEAD^，git</span> <span class="comment">diff，对文件修改并分别提交，git</span> <span class="comment">rebase</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">continue
+</pre></td></tr></table></figure>
+</li>
+<li><p>克隆远程版本库</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> clone <span class="url">git://github.com/tswicegood/mysite-chp6.git
+</pre></td></tr></table></figure>
+版本库同步
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>git fetch
+git pull &<span class="keyword">lt</span>;远程版本库名称&<span class="keyword">gt</span>; &<span class="keyword">lt</span>;需要拖入的远程版本库的分支名&<span class="keyword">gt</span>;
+</pre></td></tr></table></figure>
+给远程版本库起别名
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>git remote <span class="keyword">add</span> origin git://github<span class="preprocessor">.com</span>/tswicegood/mysite<span class="preprocessor">.git</span>
+</pre></td></tr></table></figure>
+推入远程版本库
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> push origin master
+</pre></td></tr></table></figure>
+查看本地创建的全部远程版本库别名
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> remote
+</pre></td></tr></table></figure>
+查看某个远程版本库 的详细信息
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>git remote <span class="operator"><span class="keyword">show</span> &lt;</span>版本库别名&gt;
+</pre></td></tr></table></figure>
+删除版本库别名
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>git remote rm <span class="command">\&</span>lt;版本库别名<span class="command">\&</span>gt;
+</pre></td></tr></table></figure>
+</li>
+<li><p>创建分支
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="title">git</span> branch RB_1.<span class="number">0</span> master  <span class="comment"># RB_1.0新分支名，master 主干</span>
+git branch RB_1.<span class="number">0</span>.<span class="number">1</span> <span class="number">1</span>.<span class="number">0</span>   <span class="comment"># 1.0是打过的标签</span>
+</pre></td></tr></table></figure>
+以下情况创建分支</p>
+<ul>
+<li>试验性修改</li>
+<li>增加新功能</li>
+<li>bug修复</li>
+</ul>
+</li>
+<li><p>切换分支</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> checkout RB_1.<span class="number">0</span>
+</pre></td></tr></table></figure>
+创建分支并检出该分支
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> chechout -b new master  <span class="comment"># new是新分支名，master是告诉git，不是从当前分支，而是从主分支上创建新分支，即基于主分支末梢创建新分支</span>
+</pre></td></tr></table></figure>
+</li>
+<li><p>重命名分支
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> branch -m master mymaster  <span class="comment"># master是就分支名，mymaster是新分支名</span>
+</pre></td></tr></table></figure>
+新分支名和已有的分支名相同时，重命名不会成功。
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> branch -M master mymaster
+</pre></td></tr></table></figure>
+可以强制重命名，并覆盖已有分支名称，需小心使用</p>
+</li>
+<li><p>合并分支<br>直接合并  </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="title">git</span> chechout master
+git merge alternate    <span class="comment"># 将分支alternate的修改合并进master</span>
+</pre></td></tr></table></figure>
+压合合并<br><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="title">git</span> chechout master
+<span class="title">git</span> merge <span class="comment">--squash contact</span>
+<span class="title">git</span> commit -m <span class="string">"add contact file"</span>   # 将分支contact多次提交的修改合并为一次提交
+</pre></td></tr></table></figure>
+拣选合并<br>拣选一次提交进行合并
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="title">git</span> chechout master
+<span class="title">git</span> cherry-pick <span class="number">3</span>d5a506     
+</pre></td></tr></table></figure>
+拣选多个提交
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="title">git</span> checkout master
+git cherry-pick -n 3d5a506  <span class="comment"># 3d5a506是提交名称   </span>
+git commit   <span class="comment"># 不需要-m参数</span>
+</pre></td></tr></table></figure>
+冲突处理
+如果在不同分支上对同一文件的同一文本块进行不同的修改，合并这两个不同分支时会有冲突
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> mergetool 
+</pre></td></tr></table></figure>
+选择工具来人工处理冲突
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> commit     <span class="comment"># 不需要-m参数</span>
+</pre></td></tr></table></figure>
+把RB_1.0分支上所做的修改合并到主分支上
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="title">git</span> chechout master
+<span class="title">git</span> rebase <span class="type">RB_1</span><span class="number">.0</span>
+</pre></td></tr></table></figure>
+</li>
+<li><p>删除分支
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> branch -d RB_1.<span class="number">0</span> 	<span class="comment"># 仅仅是删除了分知名，该分支的内容并没有被删除</span>
+</pre></td></tr></table></figure>
+如果分支还没有合并回当前分支，删除不会成功
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> branch -D RB_1.<span class="number">0</span>
+</pre></td></tr></table></figure>
+可以强制删除分支</p>
+</li>
+<li><p>打标签</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> tag <span class="number">1</span>.<span class="number">0</span> RB_1.<span class="number">0</span>
+</pre></td></tr></table></figure>
+查看标签
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="title">git</span> tag
+</pre></td></tr></table></figure>
+</li>
+<li><p>创建归档文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="comment">git</span> <span class="comment">archive</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">format=tar</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">prefix=mysite</span>-<span class="comment">1</span>.<span class="comment">0/</span> <span class="comment">1</span>.<span class="comment">0</span> <span class="comment">|</span> <span class="comment">gzip</span> <span class="comment">&gt;</span> <span class="comment">mysite</span>-<span class="comment">1</span>.<span class="comment">0</span>.<span class="comment">tar</span>.<span class="comment">gz</span>
+<span class="comment">git</span> <span class="comment">archive</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">format=zip</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">prefix=mysite</span>-<span class="comment">1</span>.<span class="comment">0/</span> <span class="comment">1</span>.<span class="comment">0</span> <span class="comment">&gt;</span> <span class="comment">mysite</span>-<span class="comment">1</span>.<span class="comment">0</span>.<span class="comment">zip
+</pre></td></tr></table></figure></li>
+<li>文件重命名和移动<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>git mv index<span class="variable">.html</span> hello<span class="variable">.html</span>
+</pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/05/02/git-note/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:howiefh.github.io">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">Categories</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/git/">git</a><small>1</small></li>
+  
+    <li><a href="/categories/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/categories/mysql/">mysql</a><small>1</small></li>
+  
+    <li><a href="/categories/ubuntu/">ubuntu</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/git/" style="font-size: 16.67px;">git</a><a href="/tags/github-pages/" style="font-size: 11.67px;">github pages</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/mysql/" style="font-size: 13.33px;">mysql</a><a href="/tags/ubuntu/" style="font-size: 18.33px;">ubuntu</a><a href="/tags/小米/" style="font-size: 15.00px;">小米</a>
+  </div>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2013/05/02/git-note/">git学习笔记</a>
+      </li>
+    
+      <li>
+        <a href="/2013/04/29/reset-forgot-mysql-root-password/">Ubuntu下重置忘记的MySql root密码</a>
+      </li>
+    
+      <li>
+        <a href="/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/">小米2连接Ubuntu12.04进行调试</a>
+      </li>
+    
+      <li>
+        <a href="/2013/04/26/use-hexo/">hexo使用笔记</a>
+      </li>
+    
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2013 howiefh
+  
+</div>
+<div class="clearfix"></div></footer>
+  <!--howiefh scrolltop begin-->
+  <DIV style="DISPLAY: none" id=goTopBtn><IMG border=0 src="/images/top.jpg"></DIV>
+  <SCRIPT type=text/javascript>goTopEx();</SCRIPT>
+  <!--howiefh scrolltop end-->
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
