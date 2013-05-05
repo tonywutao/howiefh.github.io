@@ -8,6 +8,7 @@ tags: [小米, ubuntu]
 Bus 001 Device 007: ID 2717:xxxx
 ```
 其中`xxxx`应该是因人而异的，这个ID就是咱们的小米了。请记下这个ID，之后会用到。
+<!--more-->  
   
 * 编辑/etc/udev/rules.d/50-android.rules中的规则
 ```
@@ -23,7 +24,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="2717", ATTR{idProduct}=="xxxx", SYMLINK+="and
 50-android.rules 文件名应该是随意的，如99-android.rules ，54-android.rules应该也可以。    
 注意 `SUBSYSTEM=="usb", SYSFS{idVendor}=="2717", MODE=="0666"`这句是给 ubuntu 7.01 以后的系统识别用的。  
 而`SUBSYSTEM=="usb_device", SYSFS{idVendor}=="2717", MODE=="0666"`是给 Ubuntu 7.01之前的系统识别用的。    
-  
+
 * 变更权限
 ```
 sudo chmod a+rx /etc/udev/rules.d/50-android.rules

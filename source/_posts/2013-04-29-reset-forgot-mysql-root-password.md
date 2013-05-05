@@ -6,6 +6,7 @@ tags: [mysql, ubuntu]
 有时，我们可能会忘记mysql root密码，这时我们就需要重置它。  
 下面就讲下具体操作:
 
+<!--more-->
 1. 停止mysql进程
 ```
 sudo /etc/init.d/mysql stop
