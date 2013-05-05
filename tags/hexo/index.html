@@ -57,6 +57,8 @@
     
       <li><a href="/archives">Archives</a></li>
     
+      <li><a href="https://github.com/howiefh">GitHub</a></li>
+    
   </ul>
   <div class="clearfix"></div>
 </nav>
@@ -84,89 +86,7 @@
     <div class="entry">
       
         <p>折腾Otcopress时发现了hexo，主题很合我胃口，文档也很好，有中文文档，使用起来也很简单，于是就换到<a href="http://zespia.tw/hexo/">Hexo</a>了。简单记录下    </p>
-<h2>开始</h2>
-<p>在安装Hexo之前，必须先<a href="http://zespia.tw/hexo/zh-CN/docs/install.html">安装</a>git和Node.js。</p>
-<p>npm安装Hexo:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">npm</span> install hexo -g
-</pre></td></tr></table></figure>
-
-<p>创建项目：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre><span class="title">hexo</span> init project （名称可以随意）
-<span class="title">cd</span> project
-</pre></td></tr></table></figure>
-
-<h2>配置</h2>
-<p>编辑根目录下的_config.yml,需要修改的几个地方。 </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="code"><pre><span class="method">title:</span> <span class="class">Hexo</span>
-<span class="method">subtitle:</span>
-<span class="method">description:</span>
-<span class="method">author:</span> <span class="class">John</span> <span class="class">Doe</span>
-<span class="method">email:</span>
-<span class="method">language:</span>
-
-<span class="method">url:</span> <span class="method">http:</span>//yoursite.com
-
-<span class="method">new_post_name:</span> :year-:month-:day-:title.md 
-
-<span class="method">deploy:</span>
-  <span class="method">type:</span> github
-  <span class="method">repository:</span> <span class="method">https:</span>//github.com/username/repo
-  <span class="method">branch:</span> master
-</pre></td></tr></table></figure>
-
-<p>添加图标：</p>
-<p>在<code>themes/light/layout/_partial/head.ejs</code>里将<code>&lt;link href=&quot;&lt;%- config.root %&gt;favicon.png&quot; rel=&quot;icon&quot;&gt;</code>替换为<code>&lt;link href=&quot;&lt;%- config.root %&gt;favicon.ico&quot; rel=&quot;icon&quot; type=&quot;image/x-ico&quot;&gt;</code>。将favicon.ico图标文件放在source目录下。制作图标的网站，<a href="http://www.faviconer.com/">www.faviconer.com</a>。</p>
-<p>添加分享：</p>
-<p>将<code>themes/light/layout/_partial/article.ejs</code>中的<code>&lt;%-partial(&#39;post/share&#39;)%&gt;</code>一行删掉，替换为<a href="http://share.baidu.com/code">百度分享的代码</a>。</p>
-<p>添加评论：</p>
-<p>将<code>themes/light/layout/_patrial/comment.ejs</code>中的<code>config.disqus_shortname &amp;&amp;</code>删掉, <code>&lt;section&gt;</code>内替换为<a href="http://duoshuo.com/">多说</a> 提供的代码。</p>
-<h2>写作</h2>
-<p>创建新文章：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">hexo</span> new <span class="string">"new post"</span>
-</pre></td></tr></table></figure>
-
-<p>生成静态文件：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">hexo</span> generate
-</pre></td></tr></table></figure>
-
-<p>启动服务器：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">hexo</span> server
-</pre></td></tr></table></figure>
-
-<p>打开浏览器，输入<a href="http://localhost:4000">http://localhost:4000</a> 预览。</p>
-<p>部署：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-</pre></td><td class="code"><pre><span class="title">hexo</span> deploy
-<span class="title">hexo</span> deploy <span class="comment">--generate</span>
-</pre></td></tr></table></figure>
-
-<p>第二个可以在部署钱自动生成文件。</p>
-<p>移除部署文件：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="comment">rm</span> <span class="literal">-</span><span class="comment">rf</span> <span class="string">.</span><span class="comment">deploy
-</pre></td></tr></table></figure>
+<p>
       
     </div>
     <footer>
@@ -260,7 +180,25 @@
   &copy; 2013 howiefh
   
 </div>
-<div class="clearfix"></div></footer>
+	<!--clicki begin-->
+	<script type='text/javascript'>
+	(function() {
+		var c = document.createElement('script'); 
+		c.type = 'text/javascript';
+		c.async = true;
+		c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.clicki.cn/boot/49036';
+		var h = document.getElementsByTagName('script')[0];
+		h.parentNode.insertBefore(c, h);
+	})();
+	</script>
+
+	<!--
+	<div id="clicki_widget_5777" title=""></div>
+	-->
+	<!--clicki end-->
+
+<div class="clearfix"></div>
+</footer>
   <!--howiefh scrolltop begin-->
   <DIV style="DISPLAY: none" id=goTopBtn><IMG border=0 src="/images/top.jpg"></DIV>
   <SCRIPT type=text/javascript>goTopEx();</SCRIPT>

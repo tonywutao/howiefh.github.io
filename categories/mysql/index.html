@@ -57,6 +57,8 @@
     
       <li><a href="/archives">Archives</a></li>
     
+      <li><a href="https://github.com/howiefh">GitHub</a></li>
+    
   </ul>
   <div class="clearfix"></div>
 </nav>
@@ -84,39 +86,7 @@
     <div class="entry">
       
         <p>有时，我们可能会忘记mysql root密码，这时我们就需要重置它。<br>下面就讲下具体操作:</p>
-<ol>
-<li>停止mysql进程<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>su<span class="operator"><span class="keyword">do</span> /etc/init.d/mysql stop
-</pre></td></tr></table></figure>
-或者
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>su<span class="operator"><span class="keyword">do</span> service mysql stop
-</pre></td></tr></table></figure></li>
-<li>用–skip-grant-tables选项启动mysql进程<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="comment">sudo</span> <span class="comment">/usr/sbin/mysqld</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">skip</span>-<span class="comment">grant</span>-<span class="comment">tables</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">skip</span>-<span class="comment">networking</span> <span class="comment">&
-</pre></td></tr></table></figure></li>
-<li>启动mysql客户端<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">mysql</span> -u root
-</pre></td></tr></table></figure></li>
-<li>刷新MySQL的系统权限相关表，重置密码<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-</pre></td><td class="code"><pre>FLUSH PRIVILEGES;
-USE mysql;
-<span class="operator"><span class="keyword">UPDATE</span> <span class="keyword">user</span> <span class="keyword">SET</span> Password = PASSWORD(<span class="string">'new_password'</span>) <span class="keyword">WHERE</span> Host = <span class="string">'localhost'</span> <span class="keyword">AND</span> <span class="keyword">User</span> = <span class="string">'root'</span>;</span>
-</pre></td></tr></table></figure></li>
-<li>刷新MySQL的系统权限相关表，重启mysql进程<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-</pre></td><td class="code"><pre>FLUSH PRIVILEGES<span class="comment">;</span>
-exit<span class="comment">;</span>
-sudo /etc/init<span class="preprocessor">.d</span>/mysql restart
-</pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>参考：<a href="http://chetansingh.me/2012/07/01/reset-lostforgot-mysql-root-password-ubuntu/">Reset lost/forgot MYSQL root password ubuntu</a></p>
-
+<p>
       
     </div>
     <footer>
@@ -210,7 +180,25 @@ sudo /etc/init<span class="preprocessor">.d</span>/mysql restart
   &copy; 2013 howiefh
   
 </div>
-<div class="clearfix"></div></footer>
+	<!--clicki begin-->
+	<script type='text/javascript'>
+	(function() {
+		var c = document.createElement('script'); 
+		c.type = 'text/javascript';
+		c.async = true;
+		c.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.clicki.cn/boot/49036';
+		var h = document.getElementsByTagName('script')[0];
+		h.parentNode.insertBefore(c, h);
+	})();
+	</script>
+
+	<!--
+	<div id="clicki_widget_5777" title=""></div>
+	-->
+	<!--clicki end-->
+
+<div class="clearfix"></div>
+</footer>
   <!--howiefh scrolltop begin-->
   <DIV style="DISPLAY: none" id=goTopBtn><IMG border=0 src="/images/top.jpg"></DIV>
   <SCRIPT type=text/javascript>goTopEx();</SCRIPT>

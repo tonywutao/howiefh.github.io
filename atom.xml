@@ -4,7 +4,7 @@
   <subtitle><![CDATA[乐不在外而在心，心以为乐，则是境皆乐；心以为苦，则无境不苦。]]></subtitle>
   <link href="http://howiefh.github.io/atom.xml" rel="self"/>
   <link href="http://howiefh.github.io"/>
-  <updated>2013-05-02T10:59:12.987Z</updated>
+  <updated>2013-05-05T08:15:29.598Z</updated>
   <id>http://howiefh.github.io/</id>
   <author>
     <name><![CDATA[howiefh]]></name>
@@ -16,7 +16,7 @@
     <link href="http://howiefh.github.io/2013/05/02/git-note/"/>
     <id>http://howiefh.github.io/2013/05/02/git-note/</id>
     <published>2013-05-02T10:31:29.000Z</published>
-    <updated>2013-05-02T10:59:06.000Z</updated>
+    <updated>2013-05-05T08:11:00.000Z</updated>
     <content type="html"><![CDATA[<ol>
 <li><p>git别名</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
@@ -26,6 +26,7 @@
 </pre></td></tr></table></figure>
 </li>
 <li><p>忽略文件<br>如果是版本库级别的忽略用<br><code>.gitignore</code><br>如果仅仅是个人的忽略用<br><code>.git/info/exclude</code>  不会将此设置传播出去</p>
+<a name="more"></a>  
 </li>
 <li><p>添加文件到暂存区</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
@@ -226,7 +227,7 @@ git pull &<span class="keyword">lt</span>;远程版本库名称&<span class="key
 </pre></td></tr></table></figure>
 删除版本库别名
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>git remote rm <span class="command">\&</span>lt;版本库别名<span class="command">\&</span>gt;
+</pre></td><td class="code"><pre>git remote rm &<span class="keyword">lt</span>;版本库别名&<span class="keyword">gt</span>;
 </pre></td></tr></table></figure>
 </li>
 <li><p>创建分支
@@ -342,30 +343,35 @@ git commit   <span class="comment"># 不需要-m参数</span>
     <link href="http://howiefh.github.io/2013/04/29/reset-forgot-mysql-root-password/"/>
     <id>http://howiefh.github.io/2013/04/29/reset-forgot-mysql-root-password/</id>
     <published>2013-04-29T10:32:33.000Z</published>
-    <updated>2013-04-29T10:42:51.000Z</updated>
+    <updated>2013-05-05T08:08:38.000Z</updated>
     <content type="html"><![CDATA[<p>有时，我们可能会忘记mysql root密码，这时我们就需要重置它。<br>下面就讲下具体操作:</p>
-<ol>
-<li>停止mysql进程<figure class="highlight"><table><tr><td class="gutter"><pre>1
+<p><a name="more"></a>
+1. 停止mysql进程</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>su<span class="operator"><span class="keyword">do</span> /etc/init.d/mysql stop
 </pre></td></tr></table></figure>
 或者
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>su<span class="operator"><span class="keyword">do</span> service mysql stop
-</pre></td></tr></table></figure></li>
-<li>用–skip-grant-tables选项启动mysql进程<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure>
+2. 用–skip-grant-tables选项启动mysql进程
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="comment">sudo</span> <span class="comment">/usr/sbin/mysqld</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">skip</span>-<span class="comment">grant</span>-<span class="comment">tables</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">skip</span>-<span class="comment">networking</span> <span class="comment">&
-</pre></td></tr></table></figure></li>
-<li>启动mysql客户端<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure>
+3. 启动mysql客户端
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="title">mysql</span> -u root
-</pre></td></tr></table></figure></li>
-<li>刷新MySQL的系统权限相关表，重置密码<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure>
+4. 刷新MySQL的系统权限相关表，重置密码
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
 </pre></td><td class="code"><pre>FLUSH PRIVILEGES;
 USE mysql;
 <span class="operator"><span class="keyword">UPDATE</span> <span class="keyword">user</span> <span class="keyword">SET</span> Password = PASSWORD(<span class="string">'new_password'</span>) <span class="keyword">WHERE</span> Host = <span class="string">'localhost'</span> <span class="keyword">AND</span> <span class="keyword">User</span> = <span class="string">'root'</span>;</span>
-</pre></td></tr></table></figure></li>
-<li>刷新MySQL的系统权限相关表，重启mysql进程<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td></tr></table></figure>
+5. 刷新MySQL的系统权限相关表，重启mysql进程
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
 </pre></td><td class="code"><pre>FLUSH PRIVILEGES<span class="comment">;</span>
@@ -373,8 +379,6 @@ exit<span class="comment">;</span>
 sudo /etc/init<span class="preprocessor">.d</span>/mysql restart
 </pre></td></tr></table></figure>
 
-</li>
-</ol>
 <p>参考：<a href="http://chetansingh.me/2012/07/01/reset-lostforgot-mysql-root-password-ubuntu/">Reset lost/forgot MYSQL root password ubuntu</a></p>
 ]]></content>
     <category scheme="http://howiefh.github.io/tags/mysql/" term="mysql"/>
@@ -386,13 +390,14 @@ sudo /etc/init<span class="preprocessor">.d</span>/mysql restart
     <link href="http://howiefh.github.io/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/"/>
     <id>http://howiefh.github.io/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/</id>
     <published>2013-04-29T07:32:38.000Z</published>
-    <updated>2013-04-29T10:44:32.000Z</updated>
+    <updated>2013-05-05T08:12:28.000Z</updated>
     <content type="html"><![CDATA[<ul>
 <li><p>打开终端，在未连接小米的情况下运行lsusb，之后连接小米再运行lsusb，比较两次的输出应该会发现多出这样一行：
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="title">Bus</span> <span class="number">001</span> Device <span class="number">007</span>: ID <span class="number">2717</span>:xxxx
 </pre></td></tr></table></figure>
 其中<code>xxxx</code>应该是因人而异的，这个ID就是咱们的小米了。请记下这个ID，之后会用到。</p>
+<a name="more"></a>  
 </li>
 <li><p>编辑/etc/udev/rules.d/50-android.rules中的规则
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
@@ -454,8 +459,9 @@ sudo /etc/init<span class="preprocessor">.d</span>/mysql restart
     <link href="http://howiefh.github.io/2013/04/26/use-hexo/"/>
     <id>http://howiefh.github.io/2013/04/26/use-hexo/</id>
     <published>2013-04-26T12:09:50.000Z</published>
-    <updated>2013-04-28T06:48:15.000Z</updated>
+    <updated>2013-05-05T08:09:37.000Z</updated>
     <content type="html"><![CDATA[<p>折腾Otcopress时发现了hexo，主题很合我胃口，文档也很好，有中文文档，使用起来也很简单，于是就换到<a href="http://zespia.tw/hexo/">Hexo</a>了。简单记录下    </p>
+<p><a name="more"></a>  </p>
 <h2>开始</h2>
 <p>在安装Hexo之前，必须先<a href="http://zespia.tw/hexo/zh-CN/docs/install.html">安装</a>git和Node.js。</p>
 <p>npm安装Hexo:</p>
