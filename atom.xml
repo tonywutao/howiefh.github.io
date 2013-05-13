@@ -4,13 +4,74 @@
   <subtitle><![CDATA[乐不在外而在心，心以为乐，则是境皆乐；心以为苦，则无境不苦。]]></subtitle>
   <link href="http://howiefh.github.io/atom.xml" rel="self"/>
   <link href="http://howiefh.github.io"/>
-  <updated>2013-05-05T08:15:29.598Z</updated>
+  <updated>2013-05-13T04:19:17.676Z</updated>
   <id>http://howiefh.github.io/</id>
   <author>
     <name><![CDATA[howiefh]]></name>
     <email><![CDATA[howiefh@gmail.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[Ubuntu软件列表]]></title>
+    <link href="http://howiefh.github.io/2013/05/09/ubuntu-soft-list/"/>
+    <id>http://howiefh.github.io/2013/05/09/ubuntu-soft-list/</id>
+    <published>2013-05-09T14:36:50.000Z</published>
+    <updated>2013-05-09T14:44:28.000Z</updated>
+    <content type="html"><![CDATA[<ul>
+<li>系统<ul>
+<li><a href="http://ubuntu-tweak.com">Ubuntu Tweak</a><a name="more"></a></li>
+<li>Typing Break(drwright)
+安装<pre><code>su<span class="operator"><span class="keyword">do</span> <span class="keyword">add</span>-apt-repository ppa:drwright/stable
+sudo apt-<span class="keyword">get</span> <span class="keyword">update</span>
+sudo apt-<span class="keyword">get</span> install drwright
+之后在系统设置里就能找到了。
+</code></pre>
+</li>
+<li><a href="http://www.ubuntuhome.com/ubuntu-install-sogoupinyin.html">Fcitx Sogou</a></li>
+<li>GDebi</li>
+<li>Wine</li>
+</ul>
+</li>
+<li>图形<ul>
+<li><a href="http://www.xnview.com/">XnView</a></li>
+<li>GIMP</li>
+</ul>
+</li>
+<li>媒体<ul>
+<li>VLC</li>
+<li>SMPlayer</li>
+<li><a href="https://github.com/osdlyrics/osdlyrics">OSD Lybric</a></li>
+</ul>
+</li>
+<li>教育<ul>
+<li>GoldenDict</li>
+</ul>
+</li>
+<li>互联网<ul>
+<li>Chromium</li>
+</ul>
+</li>
+<li>办公<ul>
+<li><a href="http://linux.wps.cn/">WPS</a></li>
+<li><a href="http://www.foxitsoftware.com/">Foxit Reader</a></li>
+<li>GVim</li>
+<li>ReText</li>
+</ul>
+</li>
+<li>附件<ul>
+<li>Shutter</li>
+<li>VirtualBox</li>
+<li>AllTray</li>
+<li>ChmSee</li>
+<li>Clipit</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    <category scheme="http://howiefh.github.io/tags/ubuntu/" term="ubuntu"/>
+    <category scheme="http://howiefh.github.io/tags/软件/" term="软件"/>
+    <category scheme="http://howiefh.github.io/categories/ubuntu/" term="ubuntu"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[git学习笔记]]></title>
     <link href="http://howiefh.github.io/2013/05/02/git-note/"/>
