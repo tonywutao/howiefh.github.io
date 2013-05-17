@@ -2,6 +2,7 @@ menu:
   Home: /
   Archives: /archives
   GitHub: https://github.com/howiefh
+  RSS: /atom.xml
 
 widgets: 
 - search
