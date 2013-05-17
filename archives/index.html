@@ -59,6 +59,8 @@
     
       <li><a href="https://github.com/howiefh">GitHub</a></li>
     
+      <li><a href="/atom.xml">RSS</a></li>
+    
   </ul>
   <div class="clearfix"></div>
 </nav>
@@ -66,6 +68,75 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
 <h2 class="archive-title">Archives</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-05-17T10:12:11.000Z"><a href="/2013/05/17/make-tagbar-support-markdown/">May 17 2013</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2013/05/17/make-tagbar-support-markdown/">让tagbar支持markdown</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3>在vimfiles目录下新建ctags.cnf文件并添加以下内容</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="literal">-</span><span class="literal">-</span><span class="comment">langdef=markdown</span>
+<span class="literal">-</span><span class="literal">-</span><span class="comment">langmap=markdown:</span>.<span class="comment">mkd</span>
+<span class="literal">-</span><span class="literal">-</span><span class="comment">regex</span>-<span class="comment">markdown=/^#</span>[ <span class="comment">\t</span>]<span class="literal">+</span><span class="comment">(</span>.<span class="comment">*)/\1/h</span>,<span class="comment">Heading_L1/</span>
+<span class="literal">-</span><span class="literal">-</span><span class="comment">regex</span>-<span class="comment">markdown=/^##</span>[ <span class="comment">\t</span>]<span class="literal">+</span><span class="comment">(</span>.<span class="comment">*)/\1/i</span>,<span class="comment">Heading_L2/</span>
+<span class="literal">-</span><span class="literal">-</span><span class="comment">regex</span>-<span class="comment">markdown=/^###</span>[ <span class="comment">\t</span>]<span class="literal">+</span><span class="comment">(</span>.<span class="comment">*)/\1/k</span>,<span class="comment">Heading_L3/
+</pre></td></tr></table></figure>
+
+<h3>在vimrc中添加以下内容</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre>let g:tagbar_type_markdown = <span class="special">{</span>
+	<span class="command">\ </span>'ctagstype' : 'markdown',
+	<span class="command">\ </span>'kinds' : <span class="special">[</span>
+		<span class="command">\ </span>'h:Heading_L1',
+		<span class="command">\ </span>'i:Heading_L2',
+		<span class="command">\ </span>'k:Heading_L3'
+	<span class="command">\ </span><span class="special">]</span>
+<span class="command">\ </span><span class="special">}</span>
+</pre></td></tr></table></figure>
+
+<p>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/05/17/make-tagbar-support-markdown/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
 
 
   
@@ -339,7 +410,7 @@
   
     <li><a href="/categories/ubuntu/">ubuntu</a><small>2</small></li>
   
-    <li><a href="/categories/vim/">vim</a><small>1</small></li>
+    <li><a href="/categories/vim/">vim</a><small>2</small></li>
   
   </ul>
 </div>
@@ -349,7 +420,7 @@
 <div class="widget tagcloud">
   <h3 class="title">Tag Cloud</h3>
   <div class="entry">
-    <a href="/tags/chrome/" style="font-size: 18.00px;">chrome</a><a href="/tags/git/" style="font-size: 14.00px;">git</a><a href="/tags/github-pages/" style="font-size: 11.00px;">github pages</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/markdown/" style="font-size: 17.00px;">markdown</a><a href="/tags/mysql/" style="font-size: 12.00px;">mysql</a><a href="/tags/ubuntu/" style="font-size: 19.00px;">ubuntu</a><a href="/tags/vim/" style="font-size: 16.00px;">vim</a><a href="/tags/小米/" style="font-size: 13.00px;">小米</a><a href="/tags/软件/" style="font-size: 15.00px;">软件</a>
+    <a href="/tags/chrome/" style="font-size: 16.00px;">chrome</a><a href="/tags/git/" style="font-size: 14.00px;">git</a><a href="/tags/github-pages/" style="font-size: 11.00px;">github pages</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/markdown/" style="font-size: 18.00px;">markdown</a><a href="/tags/mysql/" style="font-size: 12.00px;">mysql</a><a href="/tags/ubuntu/" style="font-size: 19.00px;">ubuntu</a><a href="/tags/vim/" style="font-size: 17.00px;">vim</a><a href="/tags/小米/" style="font-size: 13.00px;">小米</a><a href="/tags/软件/" style="font-size: 15.00px;">软件</a>
   </div>
 </div>
 
@@ -602,6 +673,12 @@ var cale = new Calendar("idCalendar", {
 				this.Days[day].innerHTML = "<a href='/2013/05/16/vim-markdown-preview/'>" + day + "</a>";
 			} 
 	
+			var postdate = new Date("Fri May 17 2013 18:12:11 GMT+0800"); 
+			if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) { 
+				var day = postdate.getDate();
+				this.Days[day].innerHTML = "<a href='/2013/05/17/make-tagbar-support-markdown/'>" + day + "</a>";
+			} 
+	
 
 		//howiefh
     }
@@ -619,6 +696,10 @@ $("idCalendarNext").onclick = function(){ cale.NextMonth(); }
   <ul class="entry">
     
       <li>
+        <a href="/2013/05/17/make-tagbar-support-markdown/">让tagbar支持markdown</a>
+      </li>
+    
+      <li>
         <a href="/2013/05/16/vim-markdown-preview/">vim编辑markdown时实现预览</a>
       </li>
     
@@ -632,10 +713,6 @@ $("idCalendarNext").onclick = function(){ cale.NextMonth(); }
     
       <li>
         <a href="/2013/04/29/reset-forgot-mysql-root-password/">Ubuntu下重置忘记的MySql root密码</a>
-      </li>
-    
-      <li>
-        <a href="/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/">小米2连接Ubuntu12.04进行调试</a>
       </li>
     
   </ul>
