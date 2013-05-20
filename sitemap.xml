@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://howiefh.github.io/2013/05/09/ubuntu-soft-list/</loc>
+    <lastmod>2013-05-20T07:02:30.000Z</lastmod>
+  </url>
+  <url>
     <loc>http://howiefh.github.io/2013/05/20/plans-for-vim-7.4/</loc>
     <lastmod>2013-05-20T05:45:14.000Z</lastmod>
   </url>
@@ -11,10 +15,6 @@
   <url>
     <loc>http://howiefh.github.io/2013/05/16/vim-markdown-preview/</loc>
     <lastmod>2013-05-16T17:01:57.000Z</lastmod>
-  </url>
-  <url>
-    <loc>http://howiefh.github.io/2013/05/09/ubuntu-soft-list/</loc>
-    <lastmod>2013-05-09T14:44:28.000Z</lastmod>
   </url>
   <url>
     <loc>http://howiefh.github.io/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/</loc>
