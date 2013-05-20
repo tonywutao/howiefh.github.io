@@ -23,7 +23,7 @@ tags: [ubuntu, 软件]
 - 媒体
     - VLC
     - SMPlayer
-    - [OSD Lybric](https://github.com/osdlyrics/osdlyrics)
+    - [OSD Lybric](https://github.com/osdlyrics/osdlyrics) [RhythmBox-OSD-Lyrics](https://github.com/tonychee7000/RhythmBox-OSD-Lyrics)
 - 教育
     - GoldenDict
 - 互联网
