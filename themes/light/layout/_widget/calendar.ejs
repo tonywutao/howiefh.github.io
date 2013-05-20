@@ -213,7 +213,7 @@ var cale = new Calendar("idCalendar", {
 			var postdate = new Date("<%= post.date %>"); 
 			if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) { 
 				var day = postdate.getDate();
-				this.Days[day].innerHTML = "<a href='<%= config.root %><%= post.path %>'>" + day + "</a>";
+				this.Days[day].innerHTML = "<a href='<%= config.root %><%= post.path %>' title='<%= post.title %>'>" + day + "</a>";
 			} 
 	<% }); %>
 
