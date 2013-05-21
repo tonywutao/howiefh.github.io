@@ -369,7 +369,6 @@ border:0;
   </table>
 </div>
 <script language="JavaScript">
-
 var cale = new Calendar("idCalendar", {
 	//howiefh
 	/* SelectDay: new Date().setDate(10), */
@@ -391,7 +390,6 @@ var cale = new Calendar("idCalendar", {
 		// for(var i = 0, len = flag.length; i < len; i++){ 
 			// this.Days[flag[i]].innerHTML = "<a href='javascript:void(0);' onclick=\"alert('日期是:"+this.Year+"/"+this.Month+"/"+flag[i]+"');return false;\">" + flag[i] + "</a>"; 
 		// } 
-
 		
 			var postdate = new Date("Fri Apr 26 2013 20:09:50 GMT+0800"); 
 			if (postdate.getFullYear() == this.Year && postdate.getMonth()+1 == this.Month) { 
@@ -441,11 +439,9 @@ var cale = new Calendar("idCalendar", {
 				this.Days[day].innerHTML = "<a href='/2013/05/20/plans-for-vim-7.4/' title='Vim 7.4 计划已公布'>" + day + "</a>";
 			} 
 	
-
 		//howiefh
     }
 });
-
 $("idCalendarPre").onclick = function(){ cale.PreMonth(); }
 $("idCalendarNext").onclick = function(){ cale.NextMonth(); }
 </SCRIPT>
