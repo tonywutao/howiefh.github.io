@@ -882,3 +882,41 @@ pre .deletion {
   _position: absolute;
   _right: auto;
 }
+.Calendar {
+  font-size: 0.9em;
+  background-color: #fff;
+  text-align: center;
+  padding: 15px 20px;
+  line-height: 1.5em;
+}
+.Calendar a {
+  color: #258fb8;
+}
+.Calendar table {
+  width: 100%;
+  border: 0;
+}
+.Calendar table thead {
+  color: #888;
+}
+.Calendar table td {
+  font-size: 11px;
+  padding: 1px;
+}
+#idCalendarPre {
+  cursor: pointer;
+  float: left;
+  padding-right: 5px;
+}
+#idCalendarNext {
+  cursor: pointer;
+  float: right;
+  padding-right: 5px;
+}
+#idCalendar td.onToday {
+  font-weight: bold;
+  color: #c60;
+}
+#idCalendar td.onSelect {
+  font-weight: bold;
+}
