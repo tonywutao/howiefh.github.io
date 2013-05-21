@@ -5,8 +5,22 @@
   <div class="post-content">
     <header>
       <% if (item.layout != 'page'){ %>
+		<div class="date-wrapper">
+			<div class="date-shadow"></div>
+			<div class="date-mask"></div>
+			<div class="dateTitle">
+			  <span class="d"><%= item.date.toDate().getDate() %></span>
+			  <span class="ym"><%= item.date.toDate().getMonth() %>/<%= item.date.toDate().getFullYear() %></span>
+			</div>
+		</div>
+
+<!-- howiefh comment old style begin -->
+  <% if (0){ %>
         <div class="icon"></div>
         <time datetime="<%= item.date.toDate().toISOString() %>"><a href="<%- config.root %><%- item.path %>"><%= item.date.format(config.date_format) %></a></time>
+      <% } %>
+<!-- howiefh comment old style end -->
+
       <% } %>
       <%- partial('post/title') %>
     </header>
