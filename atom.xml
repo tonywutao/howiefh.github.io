@@ -4,7 +4,7 @@
   <subtitle><![CDATA[乐不在外而在心，心以为乐，则是境皆乐；心以为苦，则无境不苦。]]></subtitle>
   <link href="http://howiefh.github.io/atom.xml" rel="self"/>
   <link href="http://howiefh.github.io"/>
-  <updated>2013-05-21T14:56:28.988Z</updated>
+  <updated>2013-05-22T05:16:25.731Z</updated>
   <id>http://howiefh.github.io/</id>
   <author>
     <name><![CDATA[howiefh]]></name>
@@ -108,7 +108,7 @@
     <link href="http://howiefh.github.io/2013/05/16/vim-markdown-preview/"/>
     <id>http://howiefh.github.io/2013/05/16/vim-markdown-preview/</id>
     <published>2013-05-16T15:39:12.000Z</published>
-    <updated>2013-05-16T17:01:57.000Z</updated>
+    <updated>2013-05-22T04:55:42.000Z</updated>
     <content type="html"><![CDATA[<p>现在使用hexo+vim+markdown+github来写博客。但是在用vim编辑markdown文件的时候，感觉缺个实时预览的功能。在不用任何插件的情况下，可以这样来做：首先，<code>hexo new &quot;your title&quot;</code>；然后，编辑你的markdown文件，保存；之后<code>hexo server</code>，打开<a href="http://localhost:4000/">http://localhost:4000/</a>，之后你可以继续在vim里继续编辑，然后保存，再手动刷新页面来预览结果。
 <a name="more"></a>   </p>
 <p>这样只是达到手动预览的效果，当然还不是我想要的，google了一下，关于vim编辑markdown实时预览还真有几个:</p>
@@ -134,7 +134,10 @@
 <li>在chrome中打开本地markdown文件，http/https也是可以支持的</li>
 <li>你会看到已经转换成html的内容</li>
 </ul>
-<p>在chrome中打开markdown文件，用vim编辑markdown，保存后页面就会自动刷新，实现预览。虽然不像一些工具一样是实时的，但是保存后再预览，这样我觉得也挺好。再在vimrc中加入以下内容：<code>autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map &lt;Leader&gt;p :!start &quot;C:\Program Files\Google\Chrome\Application\chrome.exe&quot; &quot;%:p&quot;&lt;CR&gt;</code>
+<p>在chrome中打开markdown文件，用vim编辑markdown，保存后页面就会自动刷新，实现预览。虽然不像一些工具一样是实时的，但是保存后再预览，这样我觉得也挺好。再在vimrc中加入以下内容：</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} <span class="stl_container"><span class="built_in">map</span> &lt;Leader&gt;</span>p :!start <span class="string">"C:\Program Files\Google\Chrome\Application\chrome.exe"</span> <span class="string">"%:p"</span>&lt;CR&gt;
+</pre></td></tr></table></figure>
 以后，需要预览时再<code>\p</code>打开浏览器预览。</p>
 ]]></content>
     <category scheme="http://howiefh.github.io/tags/vim/" term="vim"/>
@@ -208,7 +211,7 @@ sudo apt-<span class="keyword">get</span> install drwright
     <link href="http://howiefh.github.io/2013/05/02/git-note/"/>
     <id>http://howiefh.github.io/2013/05/02/git-note/</id>
     <published>2013-05-02T10:31:29.000Z</published>
-    <updated>2013-05-05T08:11:00.000Z</updated>
+    <updated>2013-05-22T05:16:17.000Z</updated>
     <content type="html"><![CDATA[<ol>
 <li><p>git别名</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
@@ -331,8 +334,8 @@ git <span class="keyword">log</span> --pretty=<span class="keyword">format</span
 输出：
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
-</pre></td><td class="code"><pre>^a8b8a42 (howiefh <span class="number">2013</span>-<span class="number">04</span>-<span class="number">13</span> <span class="number">19</span>:<span class="number">18</span>:<span class="number">35</span> +<span class="number">0800</span>  <span class="number">1</span>) &lt;html&gt;
-<span class="function"><span class="title">e207eaa0</span> <span class="params">(howiefh <span class="number">2013</span>-<span class="number">04</span>-<span class="number">13</span> <span class="number">19</span>:<span class="number">30</span>:<span class="number">12</span> +<span class="number">0800</span>  <span class="number">2</span>)</span>         &<span class="title">lt</span>;<span class="title">head</span>&<span class="title">gt</span>;
+</pre></td><td class="code"><pre><span class="xml"></span><span class="keyword">^a8b8a42</span><span class="xml"> (howiefh </span><span class="number">2013</span><span class="xml">-</span><span class="number">04</span><span class="xml">-</span><span class="number">13</span><span class="xml"> </span><span class="number">19</span><span class="xml">:</span><span class="number">18</span><span class="xml">:</span><span class="number">35</span><span class="xml"> +</span><span class="number">0800</span><span class="xml">  </span><span class="number">1</span><span class="xml">) <span class="tag">&lt;<span class="title">html</span>&gt;</span>
+e207eaa0 (howiefh </span><span class="number">2013</span><span class="xml">-</span><span class="number">04</span><span class="xml">-</span><span class="number">13</span><span class="xml"> </span><span class="number">19</span><span class="xml">:</span><span class="number">30</span><span class="xml">:</span><span class="number">12</span><span class="xml"> +</span><span class="number">0800</span><span class="xml">  </span><span class="number">2</span><span class="xml">)         <span class="tag">&lt;<span class="title">head</span>&gt;</span></span>
 </pre></td></tr></table></figure>
 有脱字符的表示版本库中的第一个提交
 可以限定查看范围
@@ -399,7 +402,7 @@ revert vs. reset<br>revert相对安全，是对某一次提交undo，并且保�
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre>git fetch
-git pull &<span class="keyword">lt</span>;远程版本库名称&<span class="keyword">gt</span>; &<span class="keyword">lt</span>;需要拖入的远程版本库的分支名&<span class="keyword">gt</span>;
+git pull <span class="tag">&lt;<span class="title">远程版本库名称</span>&gt;</span> <span class="tag">&lt;<span class="title">需要拖入的远程版本库的分支名</span>&gt;</span>
 </pre></td></tr></table></figure>
 给远程版本库起别名
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
@@ -415,11 +418,11 @@ git pull &<span class="keyword">lt</span>;远程版本库名称&<span class="key
 </pre></td></tr></table></figure>
 查看某个远程版本库 的详细信息
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>git remote <span class="operator"><span class="keyword">show</span> &lt;</span>版本库别名&gt;
+</pre></td><td class="code"><pre>git remote show <span class="tag">&lt;<span class="title">版本库别名</span>&gt;</span>
 </pre></td></tr></table></figure>
 删除版本库别名
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>git remote rm &<span class="keyword">lt</span>;版本库别名&<span class="keyword">gt</span>;
+</pre></td><td class="code"><pre>git remote rm <span class="tag">&lt;<span class="title">版本库别名</span>&gt;</span>
 </pre></td></tr></table></figure>
 </li>
 <li><p>创建分支
@@ -582,7 +585,7 @@ sudo /etc/init<span class="preprocessor">.d</span>/mysql restart
     <link href="http://howiefh.github.io/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/"/>
     <id>http://howiefh.github.io/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/</id>
     <published>2013-04-29T07:32:38.000Z</published>
-    <updated>2013-05-05T08:12:28.000Z</updated>
+    <updated>2013-05-22T05:11:22.000Z</updated>
     <content type="html"><![CDATA[<ul>
 <li><p>打开终端，在未连接小米的情况下运行lsusb，之后连接小米再运行lsusb，比较两次的输出应该会发现多出这样一行：
 <figure class="highlight"><table><tr><td class="gutter"><pre>1

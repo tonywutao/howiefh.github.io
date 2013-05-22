@@ -79,13 +79,11 @@
 			<div class="date-mask"></div>
 			<div class="dateTitle">
 			  <span class="d">16</span>
-			  <span class="ym">4/2013</span>
+			  <span class="ym">5/2013</span>
 			</div>
 		</div>
 
-<!-- howiefh comment old style begin -->
   
-<!-- howiefh comment old style end -->
 
       
       
@@ -121,7 +119,10 @@
 <li>在chrome中打开本地markdown文件，http/https也是可以支持的</li>
 <li>你会看到已经转换成html的内容</li>
 </ul>
-<p>在chrome中打开markdown文件，用vim编辑markdown，保存后页面就会自动刷新，实现预览。虽然不像一些工具一样是实时的，但是保存后再预览，这样我觉得也挺好。再在vimrc中加入以下内容：<code>autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} map &lt;Leader&gt;p :!start &quot;C:\Program Files\Google\Chrome\Application\chrome.exe&quot; &quot;%:p&quot;&lt;CR&gt;</code>
+<p>在chrome中打开markdown文件，用vim编辑markdown，保存后页面就会自动刷新，实现预览。虽然不像一些工具一样是实时的，但是保存后再预览，这样我觉得也挺好。再在vimrc中加入以下内容：</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} <span class="stl_container"><span class="built_in">map</span> &lt;Leader&gt;</span>p :!start <span class="string">"C:\Program Files\Google\Chrome\Application\chrome.exe"</span> <span class="string">"%:p"</span>&lt;CR&gt;
+</pre></td></tr></table></figure>
 以后，需要预览时再<code>\p</code>打开浏览器预览。</p>
 
       
