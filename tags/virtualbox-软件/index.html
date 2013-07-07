@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>markdown | 净土</title>
+  <title>virtualbox 软件 | 净土</title>
   <meta name="author" content="howiefh">
   
   <meta name="description" content="A blog of howiefh.">
@@ -70,7 +70,7 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">markdown</h2>
+<h2 class="archive-title tag">virtualbox 软件</h2>
 
 
   
@@ -83,8 +83,8 @@
 			<div class="date-shadow"></div>
 			<div class="date-mask"></div>
 			<div class="dateTitle">
-			  <span class="d">17</span>
-			  <span class="ym">5/2013</span>
+			  <span class="d">22</span>
+			  <span class="ym">6/2013</span>
 			</div>
 		</div>
 
@@ -93,99 +93,25 @@
       
       
   
-    <h1 class="title"><a href="/2013/05/17/make-tagbar-support-markdown/">让tagbar支持markdown</a></h1>
+    <h1 class="title"><a href="/2013/06/22/virtualbox-kernel-driver-not-installed/">解决virtualbox报错VBox: Kernel driver not installed (rc=-1908)</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h3>在vimfiles目录下新建ctags.cnf文件并添加以下内容</h3>
+        <p>解决virtualbox报错VBox: Kernel driver not installed (rc=-1908)</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
-3
-4
-5
-</pre></td><td class="code"><pre><span class="literal">-</span><span class="literal">-</span><span class="comment">langdef=markdown</span>
-<span class="literal">-</span><span class="literal">-</span><span class="comment">langmap=markdown:</span>.<span class="comment">mkd</span>
-<span class="literal">-</span><span class="literal">-</span><span class="comment">regex</span>-<span class="comment">markdown=/^#</span>[ <span class="comment">\t</span>]<span class="literal">+</span><span class="comment">(</span>.<span class="comment">*)/\1/h</span>,<span class="comment">Heading_L1/</span>
-<span class="literal">-</span><span class="literal">-</span><span class="comment">regex</span>-<span class="comment">markdown=/^##</span>[ <span class="comment">\t</span>]<span class="literal">+</span><span class="comment">(</span>.<span class="comment">*)/\1/i</span>,<span class="comment">Heading_L2/</span>
-<span class="literal">-</span><span class="literal">-</span><span class="comment">regex</span>-<span class="comment">markdown=/^###</span>[ <span class="comment">\t</span>]<span class="literal">+</span><span class="comment">(</span>.<span class="comment">*)/\1/k</span>,<span class="comment">Heading_L3/
+</pre></td><td class="code"><pre>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> remove virtualbox-dkms
+sudo apt-<span class="keyword">get</span> install virtualbox-dkms
 </pre></td></tr></table></figure>
-
-<h3>在vimrc中添加以下内容</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="code"><pre>let g:tagbar_type_markdown = <span class="special">{</span>
-	<span class="command">\ </span>'ctagstype' : 'markdown',
-	<span class="command">\ </span>'kinds' : <span class="special">[</span>
-		<span class="command">\ </span>'h:Heading_L1',
-		<span class="command">\ </span>'i:Heading_L2',
-		<span class="command">\ </span>'k:Heading_L3'
-	<span class="command">\ </span><span class="special">]</span>
-<span class="command">\ </span><span class="special">}</span>
-</pre></td></tr></table></figure>
-
-<p>
       
     </div>
     <footer>
       
         
           <div class="alignleft">
-            <a href="/2013/05/17/make-tagbar-support-markdown/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-		<div class="date-wrapper">
-			<div class="date-shadow"></div>
-			<div class="date-mask"></div>
-			<div class="dateTitle">
-			  <span class="d">16</span>
-			  <span class="ym">5/2013</span>
-			</div>
-		</div>
-
-  
-
-      
-      
-  
-    <h1 class="title"><a href="/2013/05/16/vim-markdown-preview/">vim编辑markdown时实现预览</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>现在使用hexo+vim+markdown+github来写博客。但是在用vim编辑markdown文件的时候，感觉缺个实时预览的功能。在不用任何插件的情况下，可以这样来做：首先，<code>hexo new &quot;your title&quot;</code>；然后，编辑你的markdown文件，保存；之后<code>hexo server</code>，打开<a href="http://localhost:4000/">http://localhost:4000/</a>，之后你可以继续在vim里继续编辑，然后保存，再手动刷新页面来预览结果。
-
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2013/05/16/vim-markdown-preview/#more" class="more-link">Read More</a>
+            <a href="/2013/06/22/virtualbox-kernel-driver-not-installed/#more" class="more-link">Read More</a>
           </div>
         
         

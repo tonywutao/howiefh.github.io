@@ -4,13 +4,28 @@
   <subtitle><![CDATA[乐不在外而在心，心以为乐，则是境皆乐；心以为苦，则无境不苦。]]></subtitle>
   <link href="http://howiefh.github.io/atom.xml" rel="self"/>
   <link href="http://howiefh.github.io"/>
-  <updated>2013-05-22T05:17:56.566Z</updated>
+  <updated>2013-07-07T06:17:42.964Z</updated>
   <id>http://howiefh.github.io/</id>
   <author>
     <name><![CDATA[howiefh]]></name>
     <email><![CDATA[howiefh@gmail.com]]></email>
   </author>
   <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[解决virtualbox报错VBox: Kernel driver not installed (rc=-1908)]]></title>
+    <link href="http://howiefh.github.io/2013/06/22/virtualbox-kernel-driver-not-installed/"/>
+    <id>http://howiefh.github.io/2013/06/22/virtualbox-kernel-driver-not-installed/</id>
+    <published>2013-06-21T16:56:51.000Z</published>
+    <updated>2013-07-07T06:17:32.000Z</updated>
+    <content type="html"><![CDATA[<p>解决virtualbox报错VBox: Kernel driver not installed (rc=-1908)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>su<span class="operator"><span class="keyword">do</span> apt-<span class="keyword">get</span> remove virtualbox-dkms
+sudo apt-<span class="keyword">get</span> install virtualbox-dkms
+</pre></td></tr></table></figure>]]></content>
+    <category scheme="http://howiefh.github.io/tags/virtualbox-软件/" term="virtualbox 软件"/>
+    <category scheme="http://howiefh.github.io/categories/ubuntu/" term="ubuntu"/>
+  </entry>
   <entry>
     <title type="html"><![CDATA[Vim 7.4 计划已公布]]></title>
     <link href="http://howiefh.github.io/2013/05/20/plans-for-vim-7.4/"/>
